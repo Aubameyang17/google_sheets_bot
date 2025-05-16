@@ -7,7 +7,7 @@ from aiogram import Bot, Dispatcher
 from handlers.message import register_message
 from sheets.watcher import watch_google_form  # фоновый цикл
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 if TOKEN is None:
     raise ValueError("BOT_TOKEN not set")
