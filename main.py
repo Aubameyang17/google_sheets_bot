@@ -9,6 +9,8 @@ from sheets.watcher import watch_google_form  # фоновый цикл
 
 TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
+if TOKEN is None:
+    raise ValueError("BOT_TOKEN not set")
 
 async def main():
     logging.basicConfig(level=logging.INFO)
