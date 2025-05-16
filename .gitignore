@@ -1,0 +1,6 @@
+# .gitignore
+config.py
+disco-catcher-460019-b9-69715b85651d.json
+__pycache__/
+.venv/
+.env
