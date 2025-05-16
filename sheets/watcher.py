@@ -3,13 +3,11 @@ import os
 import gspread
 import asyncio
 from oauth2client.service_account import ServiceAccountCredentials
-from config import CREDENTIALS_FILE
 
 # Настройка доступа
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds_json = os.getenv("GOOGLE_CREDENTIALS")
-credsjson = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(creds_json), scope)
-creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, scope)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(creds_json), scope)
 client = gspread.authorize(creds)
 
 sheet = client.open("Тестовая форма (Ответы)").sheet1

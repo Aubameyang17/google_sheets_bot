@@ -1,10 +1,14 @@
 import asyncio
 import logging
+import os
+
 from aiogram import Bot, Dispatcher
 
 from handlers.message import register_message
 from sheets.watcher import watch_google_form  # фоновый цикл
-from config import TOKEN, CHAT_ID,  CREDENTIALS_FILE
+
+TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 async def main():
     logging.basicConfig(level=logging.INFO)
